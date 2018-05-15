@@ -1,3 +1,64 @@
+/* ===== Блок добавления шрифта ===== */
+
+@font-face {
+    font-family: 'robotomedium';
+    src: url('../fonts/roboto-medium-webfont.woff2') format('woff2'),
+         url('../fonts/roboto-medium-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/* ===== Конец блока добавления шрифта ===== */
+
+/* ===== Reset start ===== */
+* {
+	margin: 0;
+    padding: 0;
+    /* Позволяет прерасчитать формулу расчета ширины элемента
+    с учетом padding border */
+    box-sizing: border-box;
+}
+
+/* Наследует цвет от родителя 
+убираем подчеркивание, надчеркивание у текста*/
+a{
+	color: inherit; 
+	text-decoration: none;
+}
+
+/* предусматривание изменение ширины картинки если значение 
+в % то позволяет картинке менять размеры в соотношении с деформацией
+блока родителя */
+img{
+	max-width: 100%;
+}
+
+/* ===== Reset end ===== */
+
+/* ===== Default class start ===== */
+
+/* Выравнивание текста по центру */
+.text-center{
+    text-align: center;
+}
+
+.blue-bg{
+    background-color: #00a7b2;
+}
+
+.orange-bg{
+    background-color: #ff6700;
+}
+
+.lilac-bg{
+    background-color: #5a00ff;
+}
+
+/* ===== Default class stop ===== */
+
+/* ===== Default component start ===== */
+
 #header{
     position: fixed;
     background-color: aqua;
@@ -5,3 +66,157 @@
     left: 0;
     top: 0;
 }
+
+/* Отступ сверху и снизу по 80px */
+.default-section{
+    padding: 80px 0;
+}
+
+.shop-item-list{
+    overflow: hidden;
+}
+
+/* максимальная ширина контейнера: 960px;
+падинги у контейнера справа и слева по 15px; */
+.container{
+    max-width: 960px;
+    padding: 0 15px;
+    /* Центровка элемента по середине родителя, если не применено
+    свойство float! */
+    margin: auto;
+}
+
+/* Компенсирующий марджин у row по -10px справа и слева */
+.row{
+    margin: 0 -10px;    
+}
+
+.col{
+    width: 25%;
+    padding: 0 10px;
+    float: left;
+}
+
+
+
+/* цвет текста #333
+цвет рамки #e1e1e1
+ширина рамки 1px */
+.shop-item{
+    background-color: white;
+    border: 1px solid #e1e1e1;
+    color: #333;
+    padding: 0 10px;
+    position: relative;    
+}
+
+/* Создаем общий класс label для всех плашек */
+/* шрифт - roboto medium, 14px, цвет #fff
+падинги - 8px 8px 8px 20px
+высота должна примерно получится 30px
+позиционирование top - 20px, left - 0 */
+.label::before{
+    font-family: 'robotomedium', sans-serif;
+    color: #fff;
+    font-size: 14px;    
+    padding: 8px 8px 8px 20px;
+	position: absolute;
+	top: 20px;
+    left: 0;
+}
+
+/* Для каждой из категорий создайте свой класс что бы задать цвет */
+
+/* Категория для плашек новинки */
+.label.new-item::before{
+    content:'Новинка';
+}
+
+/* Категория для плашек скидки */
+.label.discount-item::before{
+    content:'Скидка 15%';
+}
+
+/* Категория для плашек супер цена */
+.label.super-price::before{
+	content:'Супер цена!';
+}
+
+/* заливка для лейбла морской волны */
+.label.blue-bg::before{
+    background-color: #00a7b2;
+}
+
+/* заливка для лейбла оренжевая */
+.label.orange-bg::before{
+    background-color: #ff6700;
+}
+
+/* заливка для лейбла сиреневая */
+.label.lilac-bg::before{
+    background-color: #5a00ff;
+}
+
+/* падинги для блока с картинкой сделайте у
+ всех одинаковым 30px - сверху и 55px - снизу */
+.shop-item-img{ 
+    padding: 30px 0 55px 0;
+    height: 250px;
+}
+
+/* Фиксирование высоты картинки, дабы блоки не плавали
+по высоте */
+.shop-item-img img{
+    max-height: 100%
+}
+
+/* шрифт названия товара и цены: roboto medium; 
+размер шрифта названия товара 14px*/
+.shop-item-name{
+    font-family: 'robotomedium', sans-serif;
+    font-size: 14px;
+    padding: 0 10px 15px 10px;
+    white-space: nowrap; /* запрещение переноса строки */
+	overflow: hidden; /* скрытие переполнения текста*/
+	text-overflow: ellipsis; /* добавление троеточия */
+	display: block;
+}
+
+/* шрифт названия товара и цены: roboto medium; 
+размер шрифта цены 18px*/
+/*  Задать line-height равный высоте кнопки 30px */
+.shop-item-price{
+    line-height: 30px;
+    font-family: 'robotomedium', sans-serif;
+    font-size: 18px;
+    padding: 0 10px 30px 10px;
+}
+
+/* Кнопки по правому краю выравнивать через float */
+/* .btn-wrapper{
+    float: right;
+} */
+
+/* падинги - 7px 12px */
+.btn{
+    float: right;
+    display: inline-block;
+    padding: 7px 12px;
+    font-family: 'robotomedium', sans-serif;
+    font-size: 14px;
+    color: #fff;
+    line-height: 1em;
+}
+
+/* высота должна примерно получится 30px
+шрифт - roboto medium, 14px, цвет #fff
+фон btn-default - #742f00 */
+.btn.btn-default{
+    background-color: #742f00;
+}
+
+/* фон hover - #ff6700 */
+.btn:hover{
+    background-color: #ff6700;
+}
+/* ===== Default component end ===== */
