@@ -109,12 +109,17 @@ img{
 	float: left;
 	color: #fff;
 	text-align: center;
-	line-height: 95px;
+    line-height: 95px;
+}
+
+.header-nav li span{
+    border: 1px solid white;
+    border-radius: 13px;
 }
 
 /* задание отступа между элементами блока навигации */
 .header-nav li+li{
-    margin-left: 80px;
+    margin-left: 25px;
 }
 /* размещение ссылок на соц сети по правому краю,
 задание цвета и шрифта */
