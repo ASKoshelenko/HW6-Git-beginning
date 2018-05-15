@@ -9,6 +9,15 @@
 
 }
 
+/* подключение ярлычков из векторной графики */
+@font-face{
+	font-family:Font Awesome\ 5 Brands;
+	font-style:normal;
+	font-weight:400;
+	src:url(../fonts/fa-brands-400.woff) format("woff");
+	src:url(../fonts/fa-brands-400.woff2) format("woff2");
+}
+
 /* ===== Конец блока добавления шрифта ===== */
 
 /* ===== Reset start ===== */
@@ -59,13 +68,48 @@ img{
 
 /* ===== Default component start ===== */
 
-#header{
-    position: fixed;
-    background-color: aqua;
-    width: 100%;
-    left: 0;
-    top: 0;
+/* размещение ссылок на соц сети по правому краю,
+задание цвета и шрифта */
+.social-nav{
+	float: right;
+	font-size: 24px;
+	color: #fff;
 }
+
+/* выстраивание блока соц сетей в одну линию,
+выравнивание относительно logo */
+.social-nav li{
+	float: left;
+	line-height: 95px;
+}
+
+/* задание отступа между элементами блока 
+соц сетей */
+.social-nav li+li{
+	margin-left: 18px;
+}
+
+/* подключение элементов векторной графики для 
+иконок соц сетей */
+.fab{
+	font-family:Font Awesome\ 5 Brands;
+}
+
+/* подключение иконки фейсбука */
+.fa-facebook-f:before{
+	content:"\f39e";
+}
+
+/* подключение иконки вконтакте */
+.fa-vk:before{
+	content:"\f189";
+}
+
+/* подключение иконки ютуб */
+.fa-youtube:before{
+	content:"\f167";
+}
+
 
 /* Отступ сверху и снизу по 80px */
 .default-section{
